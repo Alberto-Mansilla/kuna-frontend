@@ -1,8 +1,10 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import Featured from "../components/Featured";
+import ProductList from "../components/ProductList";
+import styles from '../styles/Home.module.css';
 
-export default function Home() {
+export default function Home({productList}) {
   return (
     <div className={styles.container}>
       <Head>
@@ -10,7 +12,8 @@ export default function Home() {
         <meta name="description" content="Tienda online de ropa para bebés de 0 a 12 meses." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      Homepage
+      <Featured/>
+      <ProductList productList={productList} />
     </div>
   )
 }

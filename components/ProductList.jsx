@@ -8,7 +8,7 @@ const ProductList = ({productList}) => {
       <h1 className={styles.title}>Nuestros favoritos para esta estación</h1>
 
       <div className={styles.wrapper}>
-        {productList.items.map((product) => (
+        {productList.item.map((product) => (
           <ProductCard key={product.item_id} product={product} />
         ))}  
       </div>

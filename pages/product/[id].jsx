@@ -1,52 +1,26 @@
 
 import styles from "../../styles/Product.module.css";
 import Image from "next/image";
-import {useEffect, useState} from "react";
-import { useRouter} from "next/router";
+import { useState } from "react";
+import axios from "axios";
 
-const Product = () => {
-
-  const router = useRouter();
-  const {id} = router.query;
-  const [dataResponse, setdataResponse] = useState([]);
-
-  useEffect(() => {
-    if (!router.isReady) return;
-    async function getPageData() {
-      const apiUrlEndpoint = `http://localhost:3000/api/getdata-lib`;
-      const postData = {
-        method: "Post",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          id: id, 
-        })
-      };
-
-      const response = await fetch(apiUrlEndpoint, postData );
-      const res = await response.json();
-      setdataResponse(res.items);
-    }
-    getPageData();
-  }, [router.query.id, router.isReady]);
+const Product = ({product}) => {
 
   const [size, setSize] = useState(0);
 
-  const product = {
+  const body = {
     img: "/img/body-teddy.jpeg",
   };
+  
+  var item = product.item
 
   return (
-    <div className={styles.container}>
-      
+    <div className={styles.container}> 
       <div className={styles.left}>
         <div className={styles.imgContainer}>
-          <Image src={product.img} objectFit="contain" layout="fill" alt="" />
+          <Image src={body.img} objectFit="contain" layout="fill" alt="" />
         </div>
       </div>
-
-      {dataResponse.map((item) => {
-
-        return (
           <div className={styles.right}>
           <h2 className={styles.title}>{item.name_item}</h2>
 
@@ -70,14 +44,26 @@ const Product = () => {
 
           <div className="buttons">
            <button className={styles.button}>Agregar al Carrito</button>
-            <div class="divider"/>
+            <div className="divider"/>
             <button className={styles.button}>Comprar Ahora</button>
           </div>
         </div>
-        );
-      })}
+        {/* );
+      })} */}
       </div>
   );
 };
+
+export const getServerSideProps = async ({params}) => {
+  const res = await axios.get(
+    `http://localhost:5000/item/${params.id}`
+    );
+    console.log (res.data)
+  return {
+    props:{
+      product:res.data,  
+    },
+  };
+}; 
 
 export default Product;

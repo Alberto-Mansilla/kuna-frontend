@@ -7,10 +7,6 @@ import axios from "axios";
 const Product = ({product}) => {
 
   const [size, setSize] = useState(0);
-
-  const body = {
-    img: "/img/body-teddy.jpeg",
-  };
   
   var item = product.item
 
@@ -18,7 +14,7 @@ const Product = ({product}) => {
     <div className={styles.container}> 
       <div className={styles.left}>
         <div className={styles.imgContainer}>
-          <Image src={body.img} objectFit="contain" layout="fill" alt="" />
+          <Image src={item.image_path} objectFit="contain" layout="fill" alt="" />
         </div>
       </div>
           <div className={styles.right}>

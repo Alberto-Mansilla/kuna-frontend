@@ -1,31 +1,26 @@
-import axios from 'axios';
 import Head from 'next/head';
+import Featured from '../components/Featured';
+import ClientList from '../components/ClientList';
+import ClientCard from '../components/ClientCard';
 import Image from 'next/image';
-import Featured from "../components/Featured";
-import ProductList from "../components/ProductList";
+
 import styles from '../styles/Home.module.css';
 
 
-export default function Home({productList}) {
-
+export default function Home() {
   return (
     <div className={styles.container}>
+   
       <Head>
-        <title>Baby Kuna</title>
-        <meta name="description" content="Tienda online de ropa para bebés de 0 a 12 meses." />
+        <title>BabyKuna Clients</title>
+        <meta name="description" content="Clients of BabyKuna Store" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Featured/>
-      <ProductList productList={productList} />
+      <ClientList/>
+      <ClientCard/>
+      <Image src='/img/ajuar-bebe-celeste.jpg' alt='' width='100%' height='100%'/>
+    
     </div>
   );
 }
-
-export const getServerSideProps = async () =>{
-  const res = await axios.get("http://localhost:5000/item");
-  return {
-    props:{
-      productList:res.data,  
-    },
-  };
-}; 

@@ -14,7 +14,7 @@ const Product = ({product}) => {
     <div className={styles.container}> 
       <div className={styles.left}>
         <div className={styles.imgContainer}>
-          <Image src={item.image_path} objectFit="contain" layout="fill" alt="" />
+          <Image src="/img/body-teddy.jpeg" objectFit="contain" layout="fill" alt="" />
         </div>
       </div>
           <div className={styles.right}>
@@ -52,7 +52,7 @@ const Product = ({product}) => {
 
 export const getServerSideProps = async ({params}) => {
   const res = await axios.get(
-    `http://localhost:5000/item/${params.id}`
+    `https://63854156875ca3273d39768a.mockapi.io/item/${params.id}`
     );
     console.log (res.data)
   return {

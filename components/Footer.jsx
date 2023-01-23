@@ -10,14 +10,14 @@ const Footer = () => {
       <div className={styles.item}>
         <div className={styles.card}>
           <h2 className={styles.motto}>
-            LA MEJOR SELECCIÓN DE ROPA DE BEBÉ HECHA CON ALGODÓN ORGÁNICO
+            La mejor selección de ropa de bebé hecha con algodón orgánico.
           </h2>
         </div>
         <div className={styles.card}>
-          <h1 className={styles.title}>CONTÁCTANOS</h1>
+          <h1 className={styles.title}>Contactanos`</h1>
         </div>
         <div className={styles.card}>
-          <h1 className={styles.title}>NUESTRAS REDES SOCIALES</h1>
+          <h1 className={styles.title}>Nuestras redes sociales</h1>
         </div>
       </div>
     </div>

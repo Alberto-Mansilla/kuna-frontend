@@ -6,7 +6,7 @@ import axios from "axios";
 
 const Product = ({product}) => {
 
-  const [size, setSize] = useState(0);
+  const [setSize] = useState(0);
   
   var item = product.item
 

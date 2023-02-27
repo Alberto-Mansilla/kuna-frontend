@@ -1,26 +1,15 @@
 import Image from "next/image";
 import styles from "../styles/Navbar.module.css";
+import Logo from "../components/Logo.jsx"
+import NavbarMenu from "../components/NavbarMenu.jsx"
 import Link from "next/link";
 
 const Navbar = () => {
     return (
         <div className={styles.container}>
-
-            <div className={styles.item}>
-                <div className={styles.texts}>
-                    <Image src="/img/logo_kuna.png" alt="" width="10000px" height="10000px" />
-                </div>
-            </div>
-
-            <div className={styles.item}>
-                <ul className={styles.list}>
-                    <li className={styles.listItem} href="/"><Link href={"/"} passHref>Home</Link></li>
-                    <li className={styles.listItem}>Catálogo</li>
-                    <li className={styles.listItem}>Accesorios</li>
-                    <li className={styles.listItem}>Sale</li>
-                    <li className={styles.listItem}>Conócenos</li>
-                </ul>
-            </div>
+            <Logo imageUrl="/img/logo_kuna.png" logoClass="logo" />
+            
+            <NavbarMenu/>
 
             <div className={styles.item}>
                 <ul className={styles.list}>

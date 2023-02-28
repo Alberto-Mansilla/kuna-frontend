@@ -10,19 +10,20 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "mysql2": "^2.3.3",
-    "next": "^12.3.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^5.3.4",
     "bootstrap": "^5.2.2",
+    "clsx": "^1.2.1",
+    "mysql2": "^2.3.3",
+    "next": "^12.3.4",
+    "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
+    "react-dom": "^18.2.0",
     "react-modal-video": "^2.0.0",
-    "react-redux": "^8.0.4"
+    "react-redux": "^8.0.4",
+    "react-router-dom": "^5.3.4"
   },
   "devDependencies": {
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1",
-    "sass": "^1.29.0"
+    "sass": "^1.58.3"
   }
 }

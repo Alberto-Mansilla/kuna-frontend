@@ -14,7 +14,7 @@ const Footer = () => {
           </h2>
         </div>
         <div className={styles.card}>
-          <h1 className={styles.title}>Contactanos`</h1>
+          <h1 className={styles.title}>Contactanos</h1>
         </div>
         <div className={styles.card}>
           <h1 className={styles.title}>Nuestras redes sociales</h1>

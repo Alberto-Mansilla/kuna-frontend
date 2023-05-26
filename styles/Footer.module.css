@@ -1,8 +1,8 @@
 .container {
-    height: calc(100vh - 100px);
+    height: calc(200px);
     background-color: #f9f3ec;
     display: flex;
-  }
+}
   
   .item {
     flex: 1;

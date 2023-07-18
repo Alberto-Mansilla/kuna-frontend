@@ -8,10 +8,10 @@ const ProductCard = ({product}) => {
       <Link href={`/product/${product.id}`} passHref>
         <Image src = "/img/body-teddy.jpeg" alt="" width="500" height="500" />
       </Link>
-      <h1 className={styles.title}>{product.name_item}</h1>
+      <h1 className={styles.title}>{product.name}</h1>
       <span className={styles.price}>${product.price}</span> 
       <p className={styles.desc}>
-        {product.desc_item}
+        {product.description}
       </p>
     </div>
   );

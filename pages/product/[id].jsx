@@ -38,10 +38,8 @@ const Product = ({product}) => {
           </div>
 
          <h4 className={styles.add}>Cantidad</h4>
-         
           <div className={styles.add}>
               <input type="number" defaultValue={1} className={styles.quantity}/>
-              
           </div>
 
           <div className="buttons">

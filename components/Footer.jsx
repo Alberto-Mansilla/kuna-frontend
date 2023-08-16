@@ -3,9 +3,9 @@ import styles from "../styles/Footer.module.css";
 
 const Footer = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} >
       <div className={styles.item}>
-        <Image src="/img/footer_img.jpg" objectFit="cover" layout="fill" alt="" />
+        <Image src="/img/footer_img.jpg" objectFit="cover" layout="fill" alt="Footer image" />
       </div>
       <div className={styles.item}>
         <div className={styles.card}>
@@ -14,7 +14,7 @@ const Footer = () => {
           </h2>
         </div>
         <div className={styles.card}>
-          <h1 className={styles.title}>Contáctanos</h1>
+          <h1 className={styles.title}>Contactanos</h1>
         </div>
         <div className={styles.card}>
           <h1 className={styles.title}>Nuestras redes sociales</h1>

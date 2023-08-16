@@ -6,7 +6,8 @@ import axios from "axios";
 
 const Product = ({product}) => {
 
-  const [setSize] = useState(0);
+  const productSize = ["NEWBORN", "BABY", "TODDLER"]
+  const [selectedSize, setSelectedSize] = useState(null);
 
   return (
     <div className={styles.container}> 
@@ -22,11 +23,18 @@ const Product = ({product}) => {
           <p className={styles.desc}>{product.description}</p>
         
          <h4 className={styles.choose}>Talla</h4>
-
           <div className={styles.sizes}>
-            <div className={styles.size} onClick={() => setSize(0)}>
-              <span className={styles.number}>{product.size}</span>
-            </div>
+              {productSize.map((size, index) => (
+                  <div
+                      key={index}
+                      className={`${styles.size} ${
+                          selectedSize === size ? styles.selected : ""
+                      }`}
+                      onClick={() => setSelectedSize(size)}
+                  >
+                      <span className={styles.number}>{size}</span>
+                  </div>
+              ))}
           </div>
 
          <h4 className={styles.add}>Cantidad</h4>

@@ -20,7 +20,7 @@ export default function Home({productList}) {
 }
 
 export const getServerSideProps = async () =>{
-  const res = await axios.get("https://63854156875ca3273d39768a.mockapi.io/item");
+  const res = await axios.get("http://localhost:8080/product/all");
   return {
     props:{
       productList:res.data,  

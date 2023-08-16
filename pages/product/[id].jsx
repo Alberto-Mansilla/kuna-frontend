@@ -7,8 +7,6 @@ import axios from "axios";
 const Product = ({product}) => {
 
   const [setSize] = useState(0);
-  
-  var item = product
 
   return (
     <div className={styles.container}> 
@@ -18,16 +16,16 @@ const Product = ({product}) => {
         </div>
       </div>
           <div className={styles.right}>
-          <h2 className={styles.title}>{item.name_item}</h2>
+          <h2 className={styles.title}>{product.name}</h2>
 
-          <span className={styles.price}>$ {item.price}</span>
-          <p className={styles.desc}>{item.desc_item}</p>
+          <span className={styles.price}>$ {product.price}</span>
+          <p className={styles.desc}>{product.description}</p>
         
          <h4 className={styles.choose}>Talla</h4>
 
           <div className={styles.sizes}>
             <div className={styles.size} onClick={() => setSize(0)}>
-              <span className={styles.number}>{item.size}</span>
+              <span className={styles.number}>{product.size}</span>
             </div>
           </div>
 
@@ -52,7 +50,7 @@ const Product = ({product}) => {
 
 export const getServerSideProps = async ({params}) => {
   const res = await axios.get(
-    `https://63854156875ca3273d39768a.mockapi.io/item/${params.id}`
+    `http://localhost:8080/product/${params.id}`
     );
     console.log (res.data)
   return {

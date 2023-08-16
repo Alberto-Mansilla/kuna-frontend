@@ -8,7 +8,7 @@ const Product = ({product}) => {
 
   const [setSize] = useState(0);
   
-  var item = product.item
+  var item = product
 
   return (
     <div className={styles.container}> 

@@ -1,13 +1,11 @@
-
-import styles from "../../styles/Product.module.css";
+import { useRouter } from 'next/router';
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import { useState } from "react";
 import axios from "axios";
+import styles from "../../styles/Product.module.css";
 
-const Product = ({product}) => {
-
-  const productSize = ["NEWBORN", "BABY", "TODDLER"]
-  const [selectedSize, setSelectedSize] = useState(null);
+const Product = ({ product }) => {
+    const [selectedSize, setSelectedSize] = useState(null);
 
   return (
     <div className={styles.container}> 
@@ -24,15 +22,15 @@ const Product = ({product}) => {
         
          <h4 className={styles.choose}>Talla</h4>
           <div className={styles.sizes}>
-              {productSize.map((size, index) => (
+              {product.productVariations.map((productVariation, index) => (
                   <div
                       key={index}
                       className={`${styles.size} ${
-                          selectedSize === size ? styles.selected : ""
+                          selectedSize === productVariation.size ? styles.selected : ""
                       }`}
-                      onClick={() => setSelectedSize(size)}
+                      onClick={() => setSelectedSize(productVariation.size)}
                   >
-                      <span className={styles.number}>{size}</span>
+                      <span className={styles.number}>{productVariation.size}</span>
                   </div>
               ))}
           </div>
@@ -55,15 +53,20 @@ const Product = ({product}) => {
 };
 
 export const getServerSideProps = async ({params}) => {
-  const res = await axios.get(
-    `http://localhost:8080/product/${params.id}`
-    );
-    console.log (res.data)
-  return {
-    props:{
-      product:res.data,  
-    },
-  };
-}; 
+    try {
+        const res = await axios.get(`http://localhost:8080/product/${params.id}`);
+        console.log (res.data);
+        return {
+            props: {
+                product: res.data,
+            },
+        };
+    } catch (error) {
+        console.error('Error fetching product:', error);
+        return {
+            notFound: true,
+        };
+    }
+};
 
 export default Product;

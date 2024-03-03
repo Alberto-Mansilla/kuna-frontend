@@ -19,11 +19,12 @@
     "react-dom": "^18.2.0",
     "react-modal-video": "^2.0.0",
     "react-redux": "^8.0.4",
-    "react-router-dom": "^5.3.4"
+    "react-router-dom": "^5.3.4",
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1",
-    "sass": "^1.58.3"
+    "sass": "^1.71.1"
   }
 }

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "../styles/Footer.module.css";
+import translations from '../languages';
 
 const Footer = () => {
   return (
@@ -10,14 +11,14 @@ const Footer = () => {
       <div className={styles.item}>
         <div className={styles.card}>
           <h2 className={styles.motto}>
-            La mejor selección de ropa de bebé hecha con algodón orgánico.
+            {translations.es.MOTTO_TEXT}
           </h2>
         </div>
         <div className={styles.card}>
-          <h1 className={styles.title}>Contactanos</h1>
+          <h1 className={styles.title}>{translations.es.CONTACT_US}</h1>
         </div>
         <div className={styles.card}>
-          <h1 className={styles.title}>Nuestras redes sociales</h1>
+          <h1 className={styles.title}>{translations.es.OUR_SOCIAL_NETWORKS}</h1>
         </div>
       </div>
     </div>

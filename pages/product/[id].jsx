@@ -5,7 +5,20 @@ import axios from "axios";
 import styles from "../../styles/Product.module.css";
 
 const Product = ({ product }) => {
-    const [selectedSize, setSelectedSize] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(null);
+  const productSize = ["NEWBORN", "BABY", "TODDLER"]
+  const [quantity, setQuantity] = useState(1);
+
+  // Function to handle changes in the input
+  const handleQuantityChange = (e) => {
+    let inputValue = parseInt(e.target.value, 10);
+    // Check if the parsed value is NaN or less than 1 and adjust accordingly
+    if (isNaN(inputValue) || inputValue < 1) {
+      setQuantity(1);
+    } else {
+      setQuantity(inputValue);
+    }
+  };
 
   return (
     <div className={styles.container}> 
@@ -37,7 +50,12 @@ const Product = ({ product }) => {
 
          <h4 className={styles.add}>Cantidad</h4>
           <div className={styles.add}>
-              <input type="number" defaultValue={1} className={styles.quantity}/>
+          <input
+            type="number"
+            value={quantity}
+            onChange={handleQuantityChange}
+            className={styles.quantity}
+          />
           </div>
 
           <div className="buttons">

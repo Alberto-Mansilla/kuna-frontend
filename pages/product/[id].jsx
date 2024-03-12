@@ -9,6 +9,12 @@ const Product = ({ product }) => {
   const productSize = ["NEWBORN", "BABY", "TODDLER"]
   const [quantity, setQuantity] = useState(1);
 
+  const addToCart = (product, quantity, size) => {
+    // Logic to add the product, quantity, and size to the cart
+    console.log(`Adding to cart: ${product.name}, Quantity: ${quantity}, Size: ${size}`);
+    // Implement the actual cart logic here, such as updating a global state or localStorage
+  };
+
   // Function to handle changes in the input
   const handleQuantityChange = (e) => {
     let inputValue = parseInt(e.target.value, 10);
@@ -59,7 +65,7 @@ const Product = ({ product }) => {
           </div>
 
           <div className="buttons">
-           <button className={styles.button}>Agregar al Carrito</button>
+           <button className={styles.button} onClick={() => addToCart(product, quantity, selectedSize)}>Agregar al Carrito</button>
             <div className="divider"/>
             <button className={styles.button}>Comprar Ahora</button>
           </div>

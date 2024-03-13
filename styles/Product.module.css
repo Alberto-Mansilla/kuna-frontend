@@ -40,7 +40,21 @@
     border: 1px solid black;
     margin-right: 10px;
     cursor: pointer;
+    font-size: 16px;  
+    transition: all 0.3s ease; /* Smooth transition for a nicer effect */
+    background-color: #f8f8f8; /* Light background for non-selected */
+    color: #333; /* Default text color */
+  }
+
+  .selected  {
+    padding: 5px 18px;
+    border: 1px solid black;
+    margin-right: 10px;
+    cursor: pointer;
     font-size: 16px;
+    border-color: blue; 
+    background-color: #0044ff; /* Bright contrast background for selected */
+    color: #fff; /* White text for high contrast */
   }
   
   .quantity {

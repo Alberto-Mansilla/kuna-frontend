@@ -1,19 +1,14 @@
-import { useRouter } from 'next/router';
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import axios from "axios";
+import { useCart } from '../cart-context';
 import styles from "../../styles/Product.module.css";
 
 const Product = ({ product }) => {
   const [selectedSize, setSelectedSize] = useState(null);
-  const productSize = ["NEWBORN", "BABY", "TODDLER"]
   const [quantity, setQuantity] = useState(1);
 
-  const addToCart = (product, quantity, size) => {
-    // Logic to add the product, quantity, and size to the cart
-    console.log(`Adding to cart: ${product.name}, Quantity: ${quantity}, Size: ${size}`);
-    // Implement the actual cart logic here, such as updating a global state or localStorage
-  };
+  const { addToCart } = useCart();
 
   // Function to handle changes in the input
   const handleQuantityChange = (e) => {
@@ -65,7 +60,7 @@ const Product = ({ product }) => {
           </div>
 
           <div className="buttons">
-           <button className={styles.button} onClick={() => addToCart(product, quantity, selectedSize)}>Agregar al Carrito</button>
+           <button className={styles.button} onClick={() => selectedSize && addToCart(product, quantity, selectedSize)}>Agregar al Carrito</button>
             <div className="divider"/>
             <button className={styles.button}>Comprar Ahora</button>
           </div>

@@ -1,6 +1,7 @@
 import { useCart } from '../pages/cart-context';
+import styles from "../styles/Cart.module.css";
 
-const CartSidebar = () => {
+const CartSidebar = ({isCartVisible} ) => {
   const { cartItems, removeFromCart, updateQuantity } = useCart();
 
   const calculateTotal = () => {
@@ -8,7 +9,7 @@ const CartSidebar = () => {
   };
 
   return (
-    <div className="cart-sidebar">
+    <div className={`${styles.cartSidebar} ${isCartVisible ? styles.cartSidebarVisible : ''}`}>
       <h2>Cart</h2>
       <ul>
         {cartItems.map((item) => (

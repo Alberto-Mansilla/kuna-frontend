@@ -1,13 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import styles from "../styles/Navbar.module.css";
 import clsx from "clsx";
 
-const NavBarMenu = () => {
+const LoginBar = ({ toggleCart }) => {
   return (
-    <div
-      className={clsx(`main-menu`)}
-    >
+    <div className={clsx(`main-menu`)}>
       <nav>
         <ul>
           <li>
@@ -21,8 +18,9 @@ const NavBarMenu = () => {
             </Link>
           </li>
           <li>
-            {/* TODO: Will refactor this later in a new component */}
-            <Image src="/img/logo_cart.png" alt="" width="40px" height="40px" />
+            <button onClick={toggleCart}>
+              <Image src="/img/logo_cart.png" alt="Cart" width="40" height="40" />
+            </button>
           </li>
         </ul>
       </nav>
@@ -30,4 +28,4 @@ const NavBarMenu = () => {
   );
 };
 
-export default NavBarMenu;
+export default LoginBar;

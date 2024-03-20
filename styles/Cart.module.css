@@ -1,11 +1,25 @@
-.cart-sidebar {
+/* Cart.module.css */
+.cartSidebar {
     position: fixed;
-    right: 0;
     top: 0;
+    right: -300px; /* Hide sidebar by default */
     width: 300px;
     height: 100%;
-    background: white;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    z-index: 100;
-}
+    background: #fff;
+    transition: right 0.3s;
+    z-index: 1000;
+    /* other styles */
+  }
+  
+  .cartSidebarVisible {
+    position: fixed;
+    top: 0;
+    right: 0px; /* Hide sidebar by default */
+    width: 300px;
+    height: 100%;
+    background: #fff;
+    transition: right 0.3s;
+    z-index: 1000;
+    /* other styles */
+  }
+  
